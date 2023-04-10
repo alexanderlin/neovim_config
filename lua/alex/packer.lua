@@ -18,6 +18,13 @@ return require('packer').startup(function(use)
 		vim.cmd('colorscheme rose-pine')
 		end
 	})
+    use( { 'rebelot/kanagawa.nvim',
+      as = 'kanagawa',
+      config = function()
+        vim.cmd('colorscheme kanagawa')
+
+    end
+    })
     use (
         'nvim-treesitter/nvim-treesitter',
 	{run = ':TSUpdate'
