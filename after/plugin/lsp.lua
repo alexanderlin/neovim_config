@@ -21,22 +21,6 @@ lsp.configure('lua_ls', {
       }
   })
 
--- Just need to set the directory for denols to startup in
--- if it detects either files thats what it will do
-nvim_lsp.denols.setup {
-  root_dir = nvim_lsp.util.root_pattern("deno.json"),
-  init_options = {
-    lint = true,
-  },
-}
-
-nvim_lsp.tsserver.setup {
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
-  init_options = {
-    lint = true,
-  },
-}
-
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -83,10 +67,15 @@ lsp.on_attach(function(client, bufnr)
             return
         end
     end
-vim.g.markdown_fenced_languages = {
-    "ts=typescript"
-}
 end)
+
+-- Just need to set the directory for denols to startup in
+-- if it detects either files thats what it will do
+nvim_lsp.denols.setup {}
+
+nvim_lsp.tsserver.setup {}
+
+nvim_lsp.rust_analyzer.setup{}
 
 lsp.setup()
 
@@ -94,3 +83,6 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+vim.g.markdown_fenced_languages = {
+    "ts=typescript"
+}
