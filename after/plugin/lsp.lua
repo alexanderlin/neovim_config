@@ -1,6 +1,5 @@
 local lsp = require("lsp-zero")
 local nvim_lsp = require("lspconfig")
-
 lsp.preset("recommended")
 
 lsp.ensure_installed({
@@ -61,6 +60,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
+
   -- Just need to set the directory for denols to startup in
   -- if it detects either files it will stop the tsserver lsp
   if nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")(vim.fn.getcwd()) then
@@ -68,13 +68,30 @@ lsp.on_attach(function(client, bufnr)
       client.stop()
       return
     end
-  end
-  if nvim_lsp.util.root_pattern("package.json")(vim.fn.getcwd()) then
+  elseif nvim_lsp.util.root_pattern("package.json")(vim.fn.getcwd()) then
     if client.name == "denols" then
       client.stop()
       return
     end
   end
+
+
+  --local active_clients = vim.lsp.get_active_clients()
+  --if client.name == "denols" then
+  --	for _, client_ in pairs(active_clients) do
+  --		-- stop tsserver if denols is already active
+  --		if client_.name == "tsserver" then
+  --			client_.stop()
+  --		end
+  --	end
+  --elseif client.name == "tsserver" then
+  --	for _, client_ in pairs(active_clients) do
+  --		-- prevent tsserver from starting if denols is already active
+  --		if client_.name == "denols" then
+  --			client.stop()
+  --		end
+  --	end
+  --end
 end)
 
 nvim_lsp.denols.setup {}
@@ -85,10 +102,9 @@ nvim_lsp.rust_analyzer.setup {}
 
 lsp.setup()
 
-vim.diagnostic.config({
-  virtual_text = true
-})
-
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
+vim.diagnostic.config({
+  virtual_text = true
+})
