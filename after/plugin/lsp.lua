@@ -74,24 +74,6 @@ lsp.on_attach(function(client, bufnr)
       return
     end
   end
-
-
-  --local active_clients = vim.lsp.get_active_clients()
-  --if client.name == "denols" then
-  --	for _, client_ in pairs(active_clients) do
-  --		-- stop tsserver if denols is already active
-  --		if client_.name == "tsserver" then
-  --			client_.stop()
-  --		end
-  --	end
-  --elseif client.name == "tsserver" then
-  --	for _, client_ in pairs(active_clients) do
-  --		-- prevent tsserver from starting if denols is already active
-  --		if client_.name == "denols" then
-  --			client.stop()
-  --		end
-  --	end
-  --end
 end)
 
 nvim_lsp.denols.setup {}
