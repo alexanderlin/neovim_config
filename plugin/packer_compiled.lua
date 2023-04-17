@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   catppuccin = {
-    config = { "\27LJ\2\nu\0\0\3\0\a\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\1\0B\0\2\1K\0\1\0\16colorscheme\bcmd\bvim\1\0\1\fflavour\nmocha\nsetup\15catppuccin\frequire\0" },
+    config = { "\27LJ\2\n‚\1\0\0\3\0\a\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\1\0B\0\2\1K\0\1\0\16colorscheme\bcmd\bvim\1\0\2\fflavour\nmocha\16term_colors\2\nsetup\15catppuccin\frequire\0" },
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
@@ -121,7 +121,7 @@ _G.packer_plugins = {
     url = "https://github.com/ThePrimeagen/harpoon"
   },
   kanagawa = {
-    config = { "\27LJ\2\n\15\0\1\2\0\0\0\0024\1\0\0L\1\2\0å\3\1\0\6\0\28\0'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0024\3\0\0=\3\6\0025\3\a\0=\3\b\0025\3\t\0=\3\n\0024\3\0\0=\3\v\0025\3\f\0004\4\0\0=\4\r\0035\4\14\0004\5\0\0=\5\15\0044\5\0\0=\5\16\0044\5\0\0=\5\17\0044\5\0\0=\5\18\4=\4\19\3=\3\20\0023\3\21\0=\3\22\0025\3\23\0=\3\24\2B\0\2\0016\0\25\0009\0\26\0'\2\27\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\15background\1\0\2\tdark\vdragon\nlight\nlotus\14overrides\0\vcolors\ntheme\ball\vdragon\nlotus\twave\1\0\0\fpalette\1\0\0\14typeStyle\19statementStyle\1\0\1\tbold\2\17keywordStyle\1\0\1\vitalic\2\18functionStyle\17commentStyle\1\0\1\vitalic\2\1\0\6\14undercurl\2\19terminalColors\2\16transparent\1\16dimInactive\1\ntheme\twave\fcompile\1\nsetup\rkanagawa\frequire\0" },
+    config = { "\27LJ\2\n\15\0\1\2\0\0\0\0024\1\0\0L\1\2\0å\3\1\0\6\0\28\0'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0024\3\0\0=\3\6\0025\3\a\0=\3\b\0025\3\t\0=\3\n\0024\3\0\0=\3\v\0025\3\f\0004\4\0\0=\4\r\0035\4\14\0004\5\0\0=\5\15\0044\5\0\0=\5\16\0044\5\0\0=\5\17\0044\5\0\0=\5\18\4=\4\19\3=\3\20\0023\3\21\0=\3\22\0025\3\23\0=\3\24\2B\0\2\0016\0\25\0009\0\26\0'\2\27\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\15background\1\0\2\nlight\nlotus\tdark\vdragon\14overrides\0\vcolors\ntheme\ball\vdragon\nlotus\twave\1\0\0\fpalette\1\0\0\14typeStyle\19statementStyle\1\0\1\tbold\2\17keywordStyle\1\0\1\vitalic\2\18functionStyle\17commentStyle\1\0\1\vitalic\2\1\0\6\fcompile\1\16dimInactive\1\16transparent\1\19terminalColors\2\14undercurl\2\ntheme\twave\nsetup\rkanagawa\frequire\0" },
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/kanagawa",
     url = "https://github.com/rebelot/kanagawa.nvim"
@@ -201,11 +201,11 @@ try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\
 time([[Config for rose-pine]], false)
 -- Config for: kanagawa
 time([[Config for kanagawa]], true)
-try_loadstring("\27LJ\2\n\15\0\1\2\0\0\0\0024\1\0\0L\1\2\0å\3\1\0\6\0\28\0'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0024\3\0\0=\3\6\0025\3\a\0=\3\b\0025\3\t\0=\3\n\0024\3\0\0=\3\v\0025\3\f\0004\4\0\0=\4\r\0035\4\14\0004\5\0\0=\5\15\0044\5\0\0=\5\16\0044\5\0\0=\5\17\0044\5\0\0=\5\18\4=\4\19\3=\3\20\0023\3\21\0=\3\22\0025\3\23\0=\3\24\2B\0\2\0016\0\25\0009\0\26\0'\2\27\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\15background\1\0\2\tdark\vdragon\nlight\nlotus\14overrides\0\vcolors\ntheme\ball\vdragon\nlotus\twave\1\0\0\fpalette\1\0\0\14typeStyle\19statementStyle\1\0\1\tbold\2\17keywordStyle\1\0\1\vitalic\2\18functionStyle\17commentStyle\1\0\1\vitalic\2\1\0\6\14undercurl\2\19terminalColors\2\16transparent\1\16dimInactive\1\ntheme\twave\fcompile\1\nsetup\rkanagawa\frequire\0", "config", "kanagawa")
+try_loadstring("\27LJ\2\n\15\0\1\2\0\0\0\0024\1\0\0L\1\2\0å\3\1\0\6\0\28\0'6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0024\3\0\0=\3\6\0025\3\a\0=\3\b\0025\3\t\0=\3\n\0024\3\0\0=\3\v\0025\3\f\0004\4\0\0=\4\r\0035\4\14\0004\5\0\0=\5\15\0044\5\0\0=\5\16\0044\5\0\0=\5\17\0044\5\0\0=\5\18\4=\4\19\3=\3\20\0023\3\21\0=\3\22\0025\3\23\0=\3\24\2B\0\2\0016\0\25\0009\0\26\0'\2\27\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\15background\1\0\2\nlight\nlotus\tdark\vdragon\14overrides\0\vcolors\ntheme\ball\vdragon\nlotus\twave\1\0\0\fpalette\1\0\0\14typeStyle\19statementStyle\1\0\1\tbold\2\17keywordStyle\1\0\1\vitalic\2\18functionStyle\17commentStyle\1\0\1\vitalic\2\1\0\6\fcompile\1\16dimInactive\1\16transparent\1\19terminalColors\2\14undercurl\2\ntheme\twave\nsetup\rkanagawa\frequire\0", "config", "kanagawa")
 time([[Config for kanagawa]], false)
 -- Config for: catppuccin
 time([[Config for catppuccin]], true)
-try_loadstring("\27LJ\2\nu\0\0\3\0\a\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\1\0B\0\2\1K\0\1\0\16colorscheme\bcmd\bvim\1\0\1\fflavour\nmocha\nsetup\15catppuccin\frequire\0", "config", "catppuccin")
+try_loadstring("\27LJ\2\n‚\1\0\0\3\0\a\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\1\0B\0\2\1K\0\1\0\16colorscheme\bcmd\bvim\1\0\2\fflavour\nmocha\16term_colors\2\nsetup\15catppuccin\frequire\0", "config", "catppuccin")
 time([[Config for catppuccin]], false)
 
 _G._packer.inside_compile = false
