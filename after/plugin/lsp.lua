@@ -61,8 +61,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
 
-  -- Just need to set the directory for denols to startup in
-  -- if it detects either files it will stop the tsserver lsp
   if nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")(vim.fn.getcwd()) then
     if client.name == "tsserver" then
       client.stop()
@@ -76,7 +74,9 @@ lsp.on_attach(function(client, bufnr)
   end
 end)
 
-nvim_lsp.denols.setup {}
+nvim_lsp.denols.setup {
+  filetype = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+}
 
 nvim_lsp.tsserver.setup {}
 
