@@ -1,4 +1,4 @@
-local lsp = require("lsp-zero").preset({})
+local lsp = require("lsp-zero");
 local nvim_lsp = require("lspconfig")
 lsp.preset("recommended")
 
@@ -9,6 +9,16 @@ lsp.ensure_installed({
   'lua_ls',
 })
 
+-- Fix Undefined global 'vim'
+lsp.configure('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -51,38 +61,29 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
 
-  --  if nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")(vim.fn.getcwd()) then
-  --    if client.name == "tsserver" then
-  --      client.stop()
-  --      return
-  --    end
-  --  elseif nvim_lsp.util.root_pattern("package.json")(vim.fn.getcwd()) then
-  --    if client.name == "denols" then
-  --      client.stop()
-  --      return
-  --    end
-  --  end
+  if nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")(vim.fn.getcwd()) then
+    if client.name == "tsserver" then
+      client.stop()
+      return
+    end
+  elseif nvim_lsp.util.root_pattern("package.json")(vim.fn.getcwd()) then
+    if client.name == "denols" then
+      client.stop()
+      return
+    end
+  end
 end)
 
--- Fix Undefined global 'vim'
-lsp.configure('lua_ls', {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-})
-
 nvim_lsp.denols.setup {
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")
+  root_dir = nvim_lsp.util.root_pattern("deno.json","deno.jsonc")
 }
 
 nvim_lsp.tsserver.setup {
-  single_file_support = false,
-  root_dir = nvim_lsp.util.root_pattern("package.json")
+
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  single_file_support = false
 }
+
 
 nvim_lsp.rust_analyzer.setup {}
 
