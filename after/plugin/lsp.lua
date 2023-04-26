@@ -5,26 +5,12 @@ local lsp = require("lsp-zero").preset({
 })
 local nvim_lsp = require("lspconfig")
 
-
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
   'denols',
   'lua_ls',
 })
-
--- Fix Undefined global 'vim'
-lsp.configure('lua_ls', {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-})
-
-
 
 lsp.set_preferences({
   suggest_lsp_servers = false,
@@ -49,10 +35,21 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+  vim.g.markdown_fenced_languages = {
+    "ts=typescript"
+  }
+
+  vim.diagnostic.config({
+    virtual_text = true
+  })
 end)
 
 nvim_lsp.denols.setup {
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc")
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+  init_options = {
+    lint = true,
+  },
 }
 
 nvim_lsp.tsserver.setup {
@@ -60,11 +57,24 @@ nvim_lsp.tsserver.setup {
   single_file_support = false
 }
 
-
 nvim_lsp.rust_analyzer.setup {}
+
+
+-- Fix Undefined global 'vim'
+lsp.configure('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+})
+
 
 lsp.setup()
 
+-- lsp-zero 2 likes cmp after lsp-zero setup
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -86,10 +96,4 @@ cmp.setup({
     { name = 'luasnip', keyword_length = 2 },
   },
   mapping = cmp_mappings
-})
-vim.g.markdown_fenced_languages = {
-  "ts=typescript"
-}
-vim.diagnostic.config({
-  virtual_text = true
 })
