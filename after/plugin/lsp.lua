@@ -59,6 +59,7 @@ nvim_lsp.tsserver.setup {
 
 nvim_lsp.rust_analyzer.setup {}
 
+nvim_lsp.jdtls.setup {}
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {

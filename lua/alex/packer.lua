@@ -12,6 +12,8 @@ return require('packer').startup(function(use)
   use({
     'catppuccin/nvim',
     as = 'catppuccin',
+    background = { light = "latte", dark = "mocha", },
+    term_colors = true,
     config = function()
       -- setup must be called before loading
       vim.cmd.colorscheme "catppuccin-mocha"
@@ -31,6 +33,14 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme kanagawa')
     end
   })
+  use({
+    "arcticicestudio/nord-vim",
+    as = 'nord',
+    config = function()
+      vim.cmd('colorscheme nord')
+    end
+  })
+
   use(
     'nvim-treesitter/nvim-treesitter',
     { run = ':TSUpdate'
