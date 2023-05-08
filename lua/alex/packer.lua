@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
     'catppuccin/nvim',
     as = 'catppuccin',
     background = { light = "latte", dark = "mocha", },
-    term_colors = true,
     config = function()
       -- setup must be called before loading
       vim.cmd.colorscheme "catppuccin-mocha"
@@ -41,6 +40,10 @@ return require('packer').startup(function(use)
     end
   })
 
+  use({
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  })
   use(
     'nvim-treesitter/nvim-treesitter',
     { run = ':TSUpdate'
