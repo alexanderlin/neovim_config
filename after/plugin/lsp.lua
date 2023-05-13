@@ -1,8 +1,4 @@
-local lsp = require("lsp-zero").preset({
-  manage_nvim_cmp = {
-    set_sources = 'recommended'
-  }
-})
+local lsp = require("lsp-zero").preset({})
 local nvim_lsp = require("lspconfig")
 
 lsp.ensure_installed({
