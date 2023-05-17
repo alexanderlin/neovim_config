@@ -53,7 +53,7 @@ nvim_lsp.tsserver.setup {
   single_file_support = false
 }
 
-nvim_lsp.rust_analyzer.setup {}
+-- nvim_lsp.rust_analyzer.setup {}
 
 nvim_lsp.jdtls.setup {}
 
@@ -94,3 +94,5 @@ cmp.setup({
   },
   mapping = cmp_mappings
 })
+
+require("rust-tools").setup {}

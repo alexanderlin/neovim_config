@@ -60,6 +60,9 @@ return require('packer').startup(function(use)
       { 'neovim/nvim-lspconfig' },             -- Required
       { 'williamboman/mason.nvim' },           -- Optional
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      -- rust
+      {'simrat39/rust-tools.nvim'},
+      {'mfussenegger/nvim-dap'},
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },         -- Required
